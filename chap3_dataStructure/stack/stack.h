@@ -8,5 +8,6 @@ class MyStack{
 		T* mystack;
 		int top;
 	public :
+        bool push(T item);
 		
 
