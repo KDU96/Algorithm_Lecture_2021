@@ -1,16 +1,22 @@
 #include "list.cpp"
+#include <cstdlib>
+#include <ctime>
+#define  NUMBER 100
 
 int main(){
-    Linked_List<int> myIntList;
+    srand(time(0));
+    Linked_List<int> myIntList; 
 
-
-    myIntList.addRear(1);
-    myIntList.addFron(10);
+    for(int i=0; i<NUMBER; i++){
+        if(rand() % 1 == 0) myIntList.addFront(rand() % 1000);
+        else myIntList.addRear(rand() % 1000);
+    }
     
-    myIntList.show_AllElement();
     cout << "size : "  << myIntList.showListSize() << endl;
 
-    cout << "delete front : " << myIntList.deleteFront() << endl;
-    cout << "delete rear : " << myIntList.deleteRear() << endl;
-    
+    for(int i=0; i<NUMBER; i++){
+        if(rand() % 1 == 0) myIntList.deleteFront();
+        else  myIntList.deleteRear();
+    }
+    myIntList.show_AllElement();
 }

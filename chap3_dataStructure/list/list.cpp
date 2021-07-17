@@ -15,13 +15,15 @@ Linked_List<T>::Linked_List(T item){
 }
 template<typename T>
 Linked_List<T>::~Linked_List(){
-    Node<T>* tmp = front;
-    Node<T>* p;
-    cout << "destructor" << endl;
-    while(tmp != NULL){
-        p = tmp;
-        tmp = tmp->link;
-        free(p);
+    if(list_index != 0){
+        Node<T>* tmp = front;
+        Node<T>* p;
+        cout << "destructor" << endl;
+        while(tmp != NULL){
+             p = tmp;
+            tmp = tmp->link;
+            free(p);
+        }   
     }
 }
 template<typename T>
